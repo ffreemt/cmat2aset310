@@ -1,0 +1,9 @@
+{
+   "include": ["tests", "cmat2aset"],
+  "venvPath": ".venv",
+  "reportTypeshedErrors": false,
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false,
+  "pythonVersion": "3.7",
+  "ignore": []
+}

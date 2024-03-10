@@ -1,0 +1,28 @@
+{
+    "name": "cmat2aset",
+    "version": "0.1.0",
+    "description": "description",
+    "main": "index.js",
+    "repository": "git@github.com:ffreemt/cmat2aset.git",
+    "author": "ffreemt",
+    "license": "MIT",
+    "dependencies": {
+        "npm-run-all": "^4.1.5"
+    },
+    "scripts": {
+        "start": "pyright && pytest && yarn style",
+        "test": "nodemon -w tests -w cmat2aset -x pytest tests",
+        "pyright": "nodemon -w cmat2aset -w .venv -e .py -x pyright cmat2aset tests",
+        "pytest": "nodemon -w tests -w cmat2aset -e .py -x pytest tests cmat2aset",
+        "style": "nodemon -w cmat2aset -w tests -x \"black tests cmat2aset && python -m flake8\"",
+        "docstyle": "nodemon -w cmat2aset -w tests -x pydocstyle --convention=google tests cmat2aset",
+        "pylint": "nodemon -w cmat2aset -e .py -x pylint cmat2aset",
+        "test:cmat2aset": "nodemon -w tests -e .py -x pytest -k cmat2aset tests",
+        "publish": "poetry build && poetry publish",
+        "black": "black tests cmat2aset",
+        "flake8": "flake8 tests cmat2aset",
+        "pflake8": "pflake8 tests cmat2aset",
+        "pep257": "pep257 tests cmat2aset",
+        "final": "run-s pep257 black flake8 pytest"
+    }
+}
